@@ -31,7 +31,7 @@ public:
 	virtual bool operator<(PhysObj& ob) const = 0;
 };
 
-struct Diagonalinit {
+struct initialization {
 	virtual void initialization() = 0;
 };
 
@@ -41,4 +41,4 @@ public:
 	virtual unsigned int size() = 0;
 };
 
-struct all : public  BaseObj, public Diagonalinit, public PhysObj, public CVector2D, public Geofig {};
+struct all : public  BaseObj, public initialization, public PhysObj, public CVector2D, public Geofig {};
