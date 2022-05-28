@@ -1,4 +1,4 @@
-﻿// lab04-figure.h : включаемый файл для стандартных системных включаемых файлов
+// lab04-figure.h : включаемый файл для стандартных системных включаемых файлов
 // или включаемые файлы для конкретного проекта.
 #pragma once
 
@@ -25,13 +25,13 @@ public:
 
 struct PhysObj {
 public:
-	virtual double mass​() = 0;
+	virtual double mass() = 0;
 	virtual CVector2D position() = 0;
 	virtual bool operator==(PhysObj& ob) const = 0;
 	virtual bool operator<(PhysObj& ob) const = 0;
 };
 
-struct initialization {
+struct initialisation {
 	virtual void initialization() = 0;
 };
 
@@ -41,4 +41,4 @@ public:
 	virtual unsigned int size() = 0;
 };
 
-struct all : public  BaseObj, public initialization, public PhysObj, public CVector2D, public Geofig {};
+struct all : public  BaseObj, public initialisation, public PhysObj, public CVector2D, public Geofig {};
