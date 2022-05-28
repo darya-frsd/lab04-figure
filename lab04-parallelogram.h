@@ -13,7 +13,7 @@ public:
 	parallelogram(std::pair<double, double> first_point, std::pair<double, double> second_point, std::pair<double, double> third_point, std::pair<double, double> forth_point, double s, double mass);
 	double square();
 	double perimeter();
-	double mass​();
+	double mass();
 	CVector2D position();
 	bool operator==(PhysObj& object) const;
 	bool operator<(PhysObj& object) const;
@@ -31,10 +31,10 @@ bool parallelogram::operator==(PhysObj& object) const {
 }
 
 bool parallelogram::operator<(PhysObj& object) const {
-	if (weight < object.mass​()) {
-		return true;
+	if (weight > object.mass()) {
+		return false;
 	}
-	return false;
+	return true;
 }
 
 parallelogram::parallelogram() {
@@ -84,20 +84,20 @@ CVector2D parallelogram::position() {
 }
 
 void parallelogram::draw() {
-	cout << classname() << "\n";
-	cout << square() << "\n";
-	cout << perimeter() << "\n";
-	cout << size() << "\n";
-	cout << position().x << position().y << endl;
+	std::cout << classname() << "\n";
+	std::cout << square() << "\n";
+	std::cout << perimeter() << "\n";
+	std::cout << size() << "\n";
+	std::cout << position().x << position().y << endl;
 }
 
 void parallelogram::initialization() {
-	cin >> first_pointi.x >> first_pointi.y;
-	cin >> second_pointi.x >> second_pointi.y;
-	cin >> third_pointi.x >> third_pointi.y;
-	cin >> forth_pointi.x >> forth_pointi.y;
-	cin >> side;
-	cin >> weight;
+	std::cin >> first_pointi.x >> first_pointi.y;
+	std::cin >> second_pointi.x >> second_pointi.y;
+	std::cin >> third_pointi.x >> third_pointi.y;
+	std::cin >> forth_pointi.x >> forth_pointi.y;
+	std::cin >> side;
+	std::cin >> weight;
 }
 
 const char* parallelogram::classname() {
