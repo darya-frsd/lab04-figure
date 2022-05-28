@@ -41,4 +41,4 @@ public:
 	virtual unsigned int size() = 0;
 };
 
-struct all : public  BaseObj, public initialisation, public PhysObj, public CVector2D, public Geofig {};
+struct all : public  BaseObj, public initialisation, public PhysObj, public Geofig {};
